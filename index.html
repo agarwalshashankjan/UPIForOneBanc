@@ -33,13 +33,13 @@
     <script src="./js/main.js"></script>
   </head>
   <body>
-    <div id="container">
-      <div class="chat-head">
+    <div class="jumbotron m-5" style="border-style: groove; overflow: hidden">
+      <div class="chat-head" style="border-bottom: groove">
         <div style="float: left; margin: 5px">
           <i class="fas fa-long-arrow-alt-left fa-2x"></i>
         </div>
         <div style="float: left; margin: 5px" class="icon"></div>
-        <pre style="padding: 10px">
+        <pre style="padding: 10px; margin-bottom: 0px">
 John Doe
 +91 7672 4345</pre
         >
@@ -48,7 +48,7 @@ John Doe
         <!-- This card is for I paid -->
         <div
           class="card"
-          style="width: 18rem; float: right; margin-right: 50px"
+          style="width: 18rem; margin-right: 50px; float: right; clear: both"
         >
           <div class="card-body">
             <h5 class="card-title">Rs. 3000</h5>
@@ -73,7 +73,7 @@ John Doe
         <!-- This card is for I requested -->
         <div
           class="card"
-          style="width: 18rem; float: right; margin-right: 50px"
+          style="width: 18rem; margin-right: 50px; float: right; clear: both"
         >
           <div class="card-body">
             <h5 class="card-title">Rs. 250</h5>
@@ -94,7 +94,10 @@ John Doe
           </div>
         </div>
         <!-- This card is for You paid -->
-        <div class="card" style="width: 18rem; float: left; margin-right: 50px">
+        <div
+          class="card"
+          style="width: 18rem; margin-right: 50px; float: left; clear: both"
+        >
           <div class="card-body">
             <h5 class="card-title">Rs. 3000</h5>
             <i
@@ -115,7 +118,10 @@ John Doe
           </div>
         </div>
         <!-- This card is for You requested -->
-        <div class="card" style="width: 18rem; float: left; margin-right: 50px">
+        <div
+          class="card"
+          style="width: 18rem; margin-right: 50px; float: left; clear: both"
+        >
           <div class="card-body">
             <h5 class="card-title">Rs. 250</h5>
             <i
@@ -139,15 +145,5 @@ John Doe
         </div>
       </div>
     </div>
-    <!-- Here a loader is created which 
-             loads till response comes -->
-    <div class="d-flex justify-content-center">
-      <div class="spinner-border" role="status" id="loading">
-        <span class="sr-only">Loading...</span>
-      </div>
-    </div>
-    <h1>Registered Employees</h1>
-    <!-- table for showing data -->
-    <table id="employees"></table>
   </body>
 </html>
