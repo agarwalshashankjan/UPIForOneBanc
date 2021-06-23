@@ -19,6 +19,7 @@
       integrity="undefined"
       crossorigin="anonymous"
     />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"
       integrity="undefined"
@@ -30,7 +31,6 @@
       crossorigin="anonymous"
     ></script>
     <title>Transaction History</title>
-    <script src="./js/main.js"></script>
   </head>
   <body>
     <div class="jumbotron m-5" style="border-style: groove; overflow: hidden">
@@ -44,7 +44,7 @@ John Doe
 +91 7672 4345</pre
         >
       </div>
-      <div class="chat-body">
+      <div class="chat-body" id="chat-body">
         <!-- This card is for I paid -->
         <div>
           ..................................................................................................................................................................{Date
@@ -97,7 +97,7 @@ John Doe
             </p>
           </div>
         </div>
-        <!-- This card is for You paid -->
+        <!-- This card is for I received -->
         <div
           class="card"
           style="width: 18rem; margin: 50px; float: left; clear: both"
@@ -121,7 +121,7 @@ John Doe
             </p>
           </div>
         </div>
-        <!-- This card is for You requested -->
+        <!-- This card is for request received -->
         <div
           class="card"
           style="width: 18rem; margin: 50px; float: left; clear: both"
@@ -149,16 +149,6 @@ John Doe
         </div>
       </div>
     </div>
-
-    <!-- Here a loader is created which 
-             loads till response comes -->
-    <div class="d-flex justify-content-center">
-      <div class="spinner-border" role="status" id="loading">
-        <span class="sr-only">Loading...</span>
-      </div>
-    </div>
-    <h1>Registered Employees</h1>
-    <!-- table for showing data -->
-    <table id="employees"></table>
   </body>
+  <script src="./js/main.js"></script>
 </html>
