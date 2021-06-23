@@ -1,0 +1,9 @@
+.icon {
+  background: url("../assets/chatNameIcon.PNG");
+  height: 40px;
+  width: 40px;
+  display: block;
+  background-position: center;
+  background-size: cover;
+  /* Other styles here */
+}
