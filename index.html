@@ -46,9 +46,13 @@ John Doe
       </div>
       <div class="chat-body">
         <!-- This card is for I paid -->
+        <div>
+          ..................................................................................................................................................................{Date
+          Here}..............................................................................................................................................................................
+        </div>
         <div
           class="card"
-          style="width: 18rem; margin-right: 50px; float: right; clear: both"
+          style="width: 18rem; margin: 50px; float: right; clear: both"
         >
           <div class="card-body">
             <h5 class="card-title">Rs. 3000</h5>
@@ -73,7 +77,7 @@ John Doe
         <!-- This card is for I requested -->
         <div
           class="card"
-          style="width: 18rem; margin-right: 50px; float: right; clear: both"
+          style="width: 18rem; margin: 50px; float: right; clear: both"
         >
           <div class="card-body">
             <h5 class="card-title">Rs. 250</h5>
@@ -96,7 +100,7 @@ John Doe
         <!-- This card is for You paid -->
         <div
           class="card"
-          style="width: 18rem; margin-right: 50px; float: left; clear: both"
+          style="width: 18rem; margin: 50px; float: left; clear: both"
         >
           <div class="card-body">
             <h5 class="card-title">Rs. 3000</h5>
@@ -120,7 +124,7 @@ John Doe
         <!-- This card is for You requested -->
         <div
           class="card"
-          style="width: 18rem; margin-right: 50px; float: left; clear: both"
+          style="width: 18rem; margin: 50px; float: left; clear: both"
         >
           <div class="card-body">
             <h5 class="card-title">Rs. 250</h5>
@@ -145,5 +149,16 @@ John Doe
         </div>
       </div>
     </div>
+
+    <!-- Here a loader is created which 
+             loads till response comes -->
+    <div class="d-flex justify-content-center">
+      <div class="spinner-border" role="status" id="loading">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+    <h1>Registered Employees</h1>
+    <!-- table for showing data -->
+    <table id="employees"></table>
   </body>
 </html>
