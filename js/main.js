@@ -18,17 +18,37 @@ getapi(api_url);
 function show(data) {
   let sDate = new Date(data.transactions[0].startDate);
   card = `
-  <div>
-          ................................................................................................................................................................ ${sDate
-            .toDateString()
-            .substring(
-              4
-            )} ............................................................................................................................................................................
-        </div>
+  <div style="float: left; clear: both">
+            ....................................................................................................................................................................... ${new Date(
+              sDate
+            )
+              .toString()
+              .substring(
+                4,
+                16
+              )} .....................................................................................................................................................................
+          </div>
   `;
 
   // Loop to access all rows
   for (let i = 0; i < data.transactions.length; i++) {
+    if (!(inDate(new Date(data.transactions[i].startDate)) == inDate(sDate))) {
+      card += `
+      <div style="float: left; clear: both">
+            ....................................................................................................................................................................... ${new Date(
+              data.transactions[i].startDate
+            )
+              .toString()
+              .substring(
+                4,
+                16
+              )} .....................................................................................................................................................................
+          </div>
+      `;
+
+      sDate = new Date(data.transactions[i].startDate);
+    }
+
     if (data.transactions[i].type == 1) {
       if (data.transactions[i].direction == 1) {
         // You Paid
@@ -52,7 +72,10 @@ function show(data) {
               ><i class="fas fa-chevron-right"></i
             ></a>
             <p style="float: left; clear:both" class="card-text text-primary">
-              ${new Date(data.transactions[i].startDate).toUTCString()}
+              ${new Date(data.transactions[i].startDate)
+                .toString()
+                .substr(4, 12)},
+                ${to12ClockTime(data.transactions[i].startDate.toString())}
             </p>
           </div>
         </div>
@@ -81,7 +104,10 @@ function show(data) {
             <br />
             <br />
             <p style="float: left; clear: both" class="card-text text-primary">
-            ${new Date(data.transactions[i].startDate).toUTCString()}
+            ${new Date(data.transactions[i].startDate)
+              .toString()
+              .substr(4, 12)},
+              ${to12ClockTime(data.transactions[i].startDate.toString())}
             </p>
           </div>
         </div>
@@ -109,7 +135,10 @@ function show(data) {
             <br />
             <br />
             <p style="float: left; clear: both" class="card-text text-primary">
-            ${new Date(data.transactions[i].startDate).toUTCString()}
+            ${new Date(data.transactions[i].startDate)
+              .toString()
+              .substr(4, 12)},
+              ${to12ClockTime(data.transactions[i].startDate.toString())}
             </p>
           </div>
         </div>
@@ -136,7 +165,10 @@ function show(data) {
               ><i class="fas fa-chevron-right"></i
             ></a>
             <p style="float: left; clear:both" class="card-text text-primary">
-            ${new Date(data.transactions[i].startDate).toUTCString()}
+            ${new Date(data.transactions[i].startDate)
+              .toString()
+              .substr(4, 12)},
+              ${to12ClockTime(data.transactions[i].startDate.toString())}
             </p>
           </div>
         </div>
@@ -154,14 +186,10 @@ inDate = (date) => {
   return dateT;
 };
 
-function addDateLine(sDate) {
-  card += `
-  <div>
-          ................................................................................................................................................................ ${sDate
-            .toDateString()
-            .substring(
-              4
-            )} ............................................................................................................................................................................
-        </div>
-  `;
+function to12ClockTime(data) {
+  if (data.substr(11, 2) > 12) {
+    return data.substr(11, 2) - 12 + data.substr(13, 3) + " PM";
+  } else {
+    return data.substr(11, 2) + data.substr(13, 3) + " AM";
+  }
 }
